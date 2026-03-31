@@ -1,6 +1,6 @@
 
 
-# Student Mental Health Support
+# MindBridge
 
 
 ## Problem Statement
