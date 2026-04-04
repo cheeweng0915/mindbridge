@@ -5,7 +5,11 @@ export default async function Page() {
   const cookieStore = await cookies();
   const supabase = createClient(cookieStore);
 
-  const { data: todos } = await supabase.from("todos").select();
+  const { data: todos, error } = await supabase.from("todos").select();
+
+  if (error) {
+    throw new Error(`Failed to fetch todos: ${error.message}`);
+  }
 
   return (
     <ul>

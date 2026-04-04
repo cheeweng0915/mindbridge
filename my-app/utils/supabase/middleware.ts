@@ -1,10 +1,22 @@
 import { createServerClient } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY;
+const getRequiredEnv = (name: string): string => {
+  const value = process.env[name];
 
-export const createClient = (request: NextRequest) => {
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
+  }
+
+  return value;
+};
+
+const supabaseUrl = getRequiredEnv("NEXT_PUBLIC_SUPABASE_URL");
+const supabaseKey = getRequiredEnv(
+  "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY",
+);
+
+export const createClient = async (request: NextRequest) => {
   // Create an unmodified response
   let supabaseResponse = NextResponse.next({
     request: {
@@ -12,7 +24,7 @@ export const createClient = (request: NextRequest) => {
     },
   });
 
-  createServerClient(supabaseUrl!, supabaseKey!, {
+  const supabase = createServerClient(supabaseUrl, supabaseKey, {
     cookies: {
       getAll() {
         return request.cookies.getAll();
@@ -30,6 +42,9 @@ export const createClient = (request: NextRequest) => {
       },
     },
   });
+
+  // Refresh session if expired — required for Server Components to see updated sessions
+  await supabase.auth.getUser();
 
   return supabaseResponse;
 };
