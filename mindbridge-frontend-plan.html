@@ -254,7 +254,7 @@
           This file collects the frontend scope discussed so far for the
           hackathon version of MindBridge: page plan, core features, reusable
           UI pieces, client-side behavior, and a practical build order focused
-          on shipping the UI before Supabase.
+          on shipping the UI with local browser data.
         </p>
         <div class="tag-row">
           <span class="tag">Next.js 16</span>
@@ -271,7 +271,7 @@
           </article>
           <article class="mini-card">
             <strong>Client-first</strong>
-            <p>Use local state and localStorage until Supabase is ready.</p>
+            <p>Use local state and localStorage for the hackathon demo.</p>
           </article>
           <article class="mini-card">
             <strong>Calming UI</strong>
@@ -732,7 +732,7 @@ my-app/
               <li>Journal entries stored under a key like `mindbridge-journal`.</li>
               <li>All storage reads happen inside `useEffect` to avoid hydration mismatch.</li>
               <li>Breathing timer uses local component state plus `setInterval`.</li>
-              <li>Resource content stays in constants until Supabase is introduced.</li>
+              <li>Resource content stays in constants for the local demo.</li>
             </ul>
           </article>
         </div>
@@ -888,7 +888,7 @@ my-app/
         </p>
         <p class="footer-note">
           This planning file is intentionally frontend-focused so the UI can be
-          built and demoed before Supabase integration starts.
+          built and demoed with local browser storage.
         </p>
       </section>
     </main>
