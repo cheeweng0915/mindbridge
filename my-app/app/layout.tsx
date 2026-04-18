@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "MindBridge",
   description:
     "A gentle student wellbeing app for check-ins, reflection, breathing, and support.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({

@@ -325,7 +325,7 @@ a {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #010120;
+  color: inherit;
 }
 
 .mindbridge-card {
@@ -340,6 +340,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   background: #010120;
+  color: #ffffff;
   box-shadow: 0 4px 10px rgba(1, 1, 32, 0.24);
 }
 
@@ -382,6 +383,7 @@ a {
     radial-gradient(circle at top left, rgba(189, 187, 255, 0.16), transparent 28%),
     radial-gradient(circle at 80% 18%, rgba(239, 44, 193, 0.12), transparent 20%),
     #010120;
+  color: #ffffff;
   box-shadow: 0 4px 10px rgba(1, 1, 32, 0.24);
 }
 

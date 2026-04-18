@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -20,12 +21,21 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white/70 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-center justify-between gap-3 py-3 sm:gap-4 sm:py-4">
-          <Link className="min-w-0" href="/">
-            <span className="mindbridge-label hidden text-black/50 sm:block">
-              Student support
-            </span>
-            <span className="block text-xl font-medium leading-none tracking-[-0.04em] text-[#010120] sm:text-2xl">
-              MindBridge
+          <Link className="flex min-w-0 items-center gap-3" href="/">
+            <Image
+              src="/images/logo/logo-icon.svg"
+              alt="MindBridge logo"
+              width={32}
+              height={32}
+              priority
+            />
+            <span className="min-w-0">
+              <span className="mindbridge-label hidden text-black/50 sm:block">
+                Student support
+              </span>
+              <span className="block text-xl font-medium leading-none tracking-[-0.04em] text-[#010120] sm:text-2xl">
+                MindBridge
+              </span>
             </span>
           </Link>
 
