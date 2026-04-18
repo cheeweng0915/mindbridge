@@ -19,7 +19,23 @@ Our webpage allows students to answer quiz questions, analyzes their responses, 
 ## Technologies Used
 
 - Next.js (Frontend)
-- Superbase (Database)
+- Browser localStorage
+
+## Setup
+
+1. Install app dependencies:
+   ```bash
+   cd my-app
+   npm install
+   ```
+2. Start the Next.js development server:
+   ```bash
+   npm run dev
+   ```
+3. Demo data is stored locally in the browser with `localStorage`.
+4. MCP servers are configured in `.codex/config.toml` for:
+   - Next.js DevTools (`next-devtools-mcp`)
+   - Chrome DevTools (`chrome-devtools-mcp`)
 
 ## Target Users
 

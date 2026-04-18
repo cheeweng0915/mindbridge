@@ -137,3 +137,11 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+.codex/*
+!.codex/config.toml
+.agents/skills
+.claude
+.vscode
+skills-lock.json
+DESIGN.md
+.html

@@ -1,0 +1,29 @@
+[mcp_servers.next_devtools]
+command = "npx"
+args = ["-y", "next-devtools-mcp@latest"]
+startup_timeout_sec = 20
+
+[mcp_servers.next_devtools.tools.browser_eval]
+approval_mode = "approve"
+
+[mcp_servers.chrome_devtools]
+command = "npx"
+args = ["-y", "chrome-devtools-mcp@latest"]
+startup_timeout_sec = 20
+
+[mcp_servers.chrome_devtools.tools.resize_page]
+approval_mode = "approve"
+
+[mcp_servers.chrome_devtools.tools.take_snapshot]
+approval_mode = "approve"
+
+[mcp_servers.chrome_devtools.tools.take_screenshot]
+approval_mode = "approve"
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp@latest"]
+startup_timeout_sec = 20
+
+[mcp_servers.playwright.tools.browser_tabs]
+approval_mode = "approve"
