@@ -18,6 +18,11 @@ body {
   font-family: var(--font-sans);
 }
 
+::selection {
+  background: rgba(239, 44, 193, 0.18);
+  color: #010120;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -315,8 +320,10 @@ a {
 
 .mindbridge-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #010120;
 }
@@ -324,7 +331,8 @@ a {
 .mindbridge-card {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
   box-shadow: 0 4px 10px rgba(1, 1, 32, 0.1);
 }
 
@@ -332,6 +340,48 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   background: #010120;
+  box-shadow: 0 4px 10px rgba(1, 1, 32, 0.24);
+}
+
+.mindbridge-section-title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.mindbridge-hero-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+}
+
+.mindbridge-card-title {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.mindbridge-soft-panel {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at top left, rgba(189, 187, 255, 0.28), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(239, 44, 193, 0.12), transparent 24%),
+    radial-gradient(circle at 20% 80%, rgba(252, 76, 2, 0.08), transparent 22%),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 10px rgba(1, 1, 32, 0.1);
+}
+
+.mindbridge-dark-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at top left, rgba(189, 187, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgba(239, 44, 193, 0.12), transparent 20%),
+    #010120;
   box-shadow: 0 4px 10px rgba(1, 1, 32, 0.24);
 }
 
@@ -347,6 +397,7 @@ a {
   line-height: 1.2;
   text-align: center;
   white-space: normal;
+  transition: transform 160ms ease, opacity 160ms ease, background-color 160ms ease;
 }
 
 .mindbridge-button-outline {
@@ -362,6 +413,7 @@ a {
   line-height: 1.2;
   text-align: center;
   white-space: normal;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
 .mindbridge-button-glass {
@@ -378,4 +430,5 @@ a {
   text-align: center;
   white-space: normal;
   backdrop-filter: blur(16px);
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }

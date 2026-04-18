@@ -17,14 +17,14 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/70 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-center justify-between gap-3 py-3 sm:gap-4 sm:py-4">
           <Link className="min-w-0" href="/">
-            <span className="mindbridge-label hidden text-[0.7rem] text-black/50 sm:block">
+            <span className="mindbridge-label hidden text-black/50 sm:block">
               Student support
             </span>
-            <span className="block text-xl font-medium leading-none text-[#010120] sm:text-2xl">
+            <span className="block text-xl font-medium leading-none tracking-[-0.04em] text-[#010120] sm:text-2xl">
               MindBridge
             </span>
           </Link>
@@ -37,7 +37,7 @@ export function SiteHeader() {
                 <Link
                   className={`rounded-[4px] px-3 py-2 text-sm font-medium transition ${
                     isActive
-                      ? "bg-black/[0.04] text-[#010120]"
+                      ? "bg-[#010120] text-white shadow-[0_4px_10px_rgba(1,1,32,0.12)]"
                       : "text-black/60 hover:bg-black/[0.04] hover:text-[#010120]"
                   }`}
                   href={item.href}
@@ -66,7 +66,7 @@ export function SiteHeader() {
               Menu
             </button>
           </div>
-        </div>
+      </div>
 
         {open ? (
           <nav className="grid gap-2 border-t border-black/10 py-4 md:hidden">
@@ -77,7 +77,7 @@ export function SiteHeader() {
                 <Link
                   className={`rounded-[4px] px-3 py-3 text-sm font-medium transition ${
                     isActive
-                      ? "bg-black/[0.04] text-[#010120]"
+                      ? "bg-[#010120] text-white"
                       : "text-black/70 hover:bg-black/[0.04] hover:text-[#010120]"
                   }`}
                   href={item.href}
