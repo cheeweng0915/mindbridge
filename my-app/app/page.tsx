@@ -5,153 +5,188 @@ import { featureHighlights } from "@/lib/mindbridge/constants";
 
 export default function HomePage() {
   return (
-    <>
-      <section className="relative isolate overflow-hidden bg-white">
+    <div className="space-y-10 pb-12 sm:space-y-14 sm:pb-16">
+      <section className="relative isolate overflow-hidden">
         <div
           aria-hidden="true"
-          className="absolute inset-y-0 right-0 hidden w-full max-w-[48%] bg-cover bg-center lg:block"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1523240798132-8757219e7d2d?auto=format&fit=crop&w=1600&q=80)",
-          }}
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(189,187,255,0.34),transparent_20%),radial-gradient(circle_at_80%_18%,rgba(239,44,193,0.14),transparent_18%),radial-gradient(circle_at_bottom_left,rgba(252,76,2,0.09),transparent_18%)]"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(239,44,193,0.14),transparent_28%),radial-gradient(circle_at_45%_18%,rgba(189,187,255,0.34),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(252,76,2,0.10),transparent_20%)]" />
-        <div className="absolute inset-y-0 right-0 hidden w-full max-w-[48%] bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.16)_20%,rgba(255,255,255,0.84)_95%)] lg:block" />
-        <div className="relative mx-auto grid min-h-[auto] max-w-6xl gap-8 px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-14 lg:min-h-[68svh] lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
-          <div className="max-w-3xl py-4 sm:py-6">
+        <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-20">
+          <div className="space-y-6">
             <p className="mindbridge-label text-black/55">Student wellbeing</p>
-            <h1 className="mt-4 text-4xl font-medium leading-[1.04] text-[#010120] sm:mt-5 md:text-7xl">
-              Check in before stress takes over.
+            <h1 className="mindbridge-hero-title max-w-3xl text-[#010120]">
+              A calmer place to notice stress before it grows.
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-[1.35] text-black/68 sm:mt-6 sm:text-lg sm:leading-[1.3]">
-              MindBridge helps students notice stress, choose one next step, and
-              keep private notes in this browser.
+            <p className="max-w-2xl text-base leading-[1.35] text-black/68 sm:text-lg">
+              MindBridge gives students one soft entry point for checking in,
+              writing a note, slowing the body down, and finding support.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
-              <Link
-                className="mindbridge-button-dark px-5 py-3 text-sm font-medium"
-                href="/quiz"
-              >
-                Start
+            <div className="flex flex-wrap gap-3">
+              <Link className="mindbridge-button-dark px-5 py-3 text-sm font-medium" href="/quiz">
+                Start check-in
               </Link>
-              <Link
-                className="mindbridge-button-outline px-5 py-3 text-sm font-medium"
-                href="/resources"
-              >
-                Get help
+              <Link className="mindbridge-button-outline px-5 py-3 text-sm font-medium" href="/resources">
+                Open support
               </Link>
             </div>
-            <p className="mt-8 max-w-xl text-sm leading-[1.35] text-black/55">
-              Not a diagnosis. For emergencies, call local emergency services.
+            <p className="max-w-xl text-sm leading-[1.35] text-black/55">
+              Not a diagnosis. For emergencies, contact local emergency services.
             </p>
           </div>
-          <div
-            aria-hidden="true"
-            className="mindbridge-card min-h-[180px] bg-cover bg-center lg:hidden"
-            style={{
-              backgroundImage:
-                "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(1,1,32,0.20)), url(https://images.unsplash.com/photo-1523240798132-8757219e7d2d?auto=format&fit=crop&w=900&q=80)",
-            }}
-          />
+
+          <div className="grid gap-4">
+            <div className="mindbridge-soft-panel p-5 sm:p-6">
+              <div className="grid gap-4 sm:grid-cols-[1.2fr_0.8fr]">
+                <div className="space-y-4">
+                  <p className="mindbridge-label text-black/50">Soft launch</p>
+                  <p className="mindbridge-card-title max-w-sm text-[#010120]">
+                    One short flow, one private note, one calmer next step.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="rounded-[4px] border border-black/10 bg-white/80 px-2 py-1 text-xs font-medium uppercase tracking-[0.08em] text-[#010120]">
+                      Check-in
+                    </span>
+                    <span className="rounded-[4px] border border-black/10 bg-white/80 px-2 py-1 text-xs font-medium uppercase tracking-[0.08em] text-[#010120]">
+                      Journal
+                    </span>
+                    <span className="rounded-[4px] border border-black/10 bg-white/80 px-2 py-1 text-xs font-medium uppercase tracking-[0.08em] text-[#010120]">
+                      Breathing
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-end justify-end">
+                  <div className="relative h-44 w-full max-w-[180px] overflow-hidden rounded-[8px] border border-black/10 bg-[#010120] p-4 text-white shadow-[0_4px_10px_rgba(1,1,32,0.1)]">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_20%,rgba(189,187,255,0.32),transparent_28%),radial-gradient(circle_at_78%_82%,rgba(239,44,193,0.18),transparent_24%)]" />
+                    <div className="relative flex h-full flex-col justify-between">
+                      <p className="mindbridge-label text-white/60">Today</p>
+                      <div>
+                        <p className="text-4xl font-medium tracking-[-0.05em]">08</p>
+                        <p className="mt-1 text-sm text-white/68">guided prompts</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="mindbridge-card p-4">
+                <p className="mindbridge-label text-black/45">Private</p>
+                <p className="mt-3 text-3xl font-medium tracking-[-0.05em] text-[#010120]">
+                  Local
+                </p>
+                <p className="mt-3 text-sm leading-[1.35] text-black/62">
+                  Drafts and notes stay in this browser.
+                </p>
+              </div>
+              <div className="mindbridge-card p-4">
+                <p className="mindbridge-label text-black/45">Tools</p>
+                <p className="mt-3 text-3xl font-medium tracking-[-0.05em] text-[#010120]">
+                  4
+                </p>
+                <p className="mt-3 text-sm leading-[1.35] text-black/62">
+                  Check-in, journal, breathing, and resources.
+                </p>
+              </div>
+              <div className="mindbridge-card p-4">
+                <p className="mindbridge-label text-black/45">Tone</p>
+                <p className="mt-3 text-3xl font-medium tracking-[-0.05em] text-[#010120]">
+                  Soft
+                </p>
+                <p className="mt-3 text-sm leading-[1.35] text-black/62">
+                  Clear guidance without feeling clinical.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <CheckInSummary />
 
-      <section className="bg-white py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div
-              className="mindbridge-card min-h-[220px] bg-cover bg-center sm:min-h-[300px]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg, rgba(255,255,255,0.08), rgba(1,1,32,0.24)), url(https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80)",
-              }}
-            >
-              <div className="flex h-full flex-col justify-end p-6 text-white">
-                <p className="mindbridge-label text-white/70">Main tools</p>
-                <p className="mt-3 max-w-sm text-xl font-medium leading-[1.12] sm:text-2xl">
-                  One calm place for checking in, writing, breathing, and finding help.
-                </p>
-              </div>
+      <section className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="mindbridge-dark-panel p-6 text-white sm:p-8">
+            <p className="mindbridge-label text-white/60">Research zone</p>
+            <h2 className="mindbridge-section-title mt-4 max-w-md text-white">
+              Calm UI on the front, practical support underneath.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-[1.35] text-white/72">
+              The app helps students slow down long enough to notice pressure,
+              then points them to a single useful action instead of overwhelming
+              them with choices.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link className="mindbridge-button-glass px-5 py-3 text-sm font-medium" href="/quiz">
+                Take the quiz
+              </Link>
+              <Link className="mindbridge-button-glass px-5 py-3 text-sm font-medium" href="/journal">
+                Write a note
+              </Link>
             </div>
+          </div>
 
-            <div>
-              <p className="mindbridge-label text-black/55">Choose a tool</p>
-              <h2 className="mt-4 text-3xl font-medium leading-[1.08] text-[#010120] sm:text-4xl">
-                Start with the smallest helpful action.
-              </h2>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {featureHighlights.map((item) => (
-                  <Link
-                    className="mindbridge-card p-5 transition hover:-translate-y-0.5"
-                    href={item.href}
-                    key={item.href}
-                  >
-                    <p className="text-xl font-medium leading-[1.12] text-[#010120]">
-                      {item.title}
-                    </p>
-                    <p className="mt-3 text-sm leading-[1.35] text-black/68">
-                      {item.body}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
+          <div className="grid gap-4">
+            {featureHighlights.map((item) => (
+              <Link
+                className="mindbridge-card p-5 transition hover:-translate-y-0.5"
+                href={item.href}
+                key={item.href}
+              >
+                <p className="mindbridge-label text-black/45">Quick path</p>
+                <p className="mt-3 text-2xl font-medium leading-[1.08] tracking-[-0.04em] text-[#010120]">
+                  {item.title}
+                </p>
+                <p className="mt-3 max-w-xl text-sm leading-[1.35] text-black/68">
+                  {item.body}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#010120] py-12 text-white sm:py-16">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-5">
-            <p className="mindbridge-label text-white/60">Local storage</p>
-            <h2 className="text-3xl font-medium leading-[1.08] text-white sm:text-4xl">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-4 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="mindbridge-card p-6 sm:p-8">
+            <p className="mindbridge-label text-black/45">Local storage</p>
+            <h2 className="mindbridge-section-title mt-4 max-w-md text-[#010120]">
               Data stays on this device.
             </h2>
-            <p className="max-w-2xl text-base leading-[1.35] text-white/72">
+            <p className="mt-5 max-w-2xl text-base leading-[1.35] text-black/68">
               Quiz drafts, results, and journal entries are saved in the
-              visitor&apos;s browser. On Vercel, they stay tied to that browser
-              on your deployed site.
+              visitor&apos;s browser. Add a backend later if you need sync across
+              devices.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                className="mindbridge-button-glass px-5 py-3 text-sm font-medium"
-                href="/quiz"
-              >
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link className="mindbridge-button-dark px-5 py-3 text-sm font-medium" href="/quiz">
                 Check in
               </Link>
-              <Link
-                className="mindbridge-button-glass px-5 py-3 text-sm font-medium"
-                href="/journal"
-              >
-                Journal
+              <Link className="mindbridge-button-outline px-5 py-3 text-sm font-medium" href="/resources">
+                Get help
               </Link>
             </div>
           </div>
+
           <div className="grid gap-4">
-            <div className="mindbridge-dark-card p-6">
+            <div className="mindbridge-dark-panel p-6 text-white">
               <p className="mindbridge-label text-white/60">Saved keys</p>
-              <p className="mt-4 break-words font-mono text-sm text-white">
-                mindbridge.quiz.draft
-              </p>
-              <p className="mt-2 break-words font-mono text-sm text-white">
-                mindbridge.quiz.result
-              </p>
-              <p className="mt-2 break-words font-mono text-sm text-white">
-                mindbridge.journal.entries
-              </p>
+              <div className="mt-4 space-y-2 font-mono text-sm text-white/84">
+                <p>mindbridge.quiz.draft</p>
+                <p>mindbridge.quiz.result</p>
+                <p>mindbridge.journal.entries</p>
+              </div>
             </div>
-            <div className="mindbridge-dark-card p-6">
-              <p className="mindbridge-label text-white/60">Demo note</p>
-              <p className="mt-4 text-sm leading-[1.35] text-white/72">
-                Simple for a hackathon demo. Add a backend later if users need
-                sync across devices.
+            <div className="mindbridge-soft-panel p-6">
+              <p className="mindbridge-label text-black/45">Demo note</p>
+              <p className="mt-4 text-sm leading-[1.35] text-black/68">
+                The layout follows the same light-and-dark rhythm as DESIGN.md:
+                optimistic on top, serious where support matters.
               </p>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
